@@ -1,0 +1,319 @@
+/* ============================================
+   Login Component Styles
+   Accessible design with high contrast
+   Modern color scheme: #FE7F2D, #233d4d, #D7263D, #02182B
+   ============================================ */
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a2e;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating shapes for visual appeal */
+.login-container::before {
+  display: none;
+}
+
+.login-container::after {
+  display: none;
+}
+
+@keyframes floatRotate {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translate(60px, -60px) rotate(120deg) scale(1.1);
+    opacity: 0.8;
+  }
+  66% { 
+    transform: translate(-60px, 60px) rotate(240deg) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+.register-card {
+  background: #16213e;
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.6);
+  max-width: 650px;
+  width: 100%;
+  border: 4px solid #0f3460;
+  position: relative;
+  z-index: 10;
+  animation: slideUpFade 0.8s ease-out;
+  overflow: hidden;
+}
+
+.login-card::before {
+  display: none;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.login-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #02182B;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 
+    0 0 20px rgba(254, 127, 45, 0.3),
+    2px 2px 4px rgba(254, 127, 45, 0.2);
+  background: linear-gradient(135deg, #FE7F2D 0%, #D7263D 50%, #FE7F2D 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShimmer 3s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes titleShimmer {
+  0%, 100% { 
+    background-position: 0% center;
+    filter: brightness(1);
+  }
+  50% { 
+    background-position: 100% center;
+    filter: brightness(1.2);
+  }
+}
+
+.login-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.form-control-lg {
+  font-size: 1.1rem;
+  padding: 15px;
+  border: 3px solid #0f3460;
+  border-radius: 12px;
+  background: #0f1a2e;
+  color: #ffffff;
+  transition: all 0.3s;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-control-lg:focus {
+  border-color: #FE7F2D;
+  box-shadow: 0 0 0 0.4rem rgba(254, 127, 45, 0.3);
+  background: #0f1a2e;
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  font-size: 1.1rem;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-lg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-lg:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-primary {
+  background: #FE7F2D;
+  color: white;
+  box-shadow: 0 8px 20px rgba(254, 127, 45, 0.4);
+}
+
+.btn-primary:hover {
+  background: #ff9a56;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(254, 127, 45, 0.5);
+}
+
+.btn-secondary {
+  background: #0f3460;
+  color: white;
+  box-shadow: 0 8px 20px rgba(15, 52, 96, 0.4);
+}
+
+.btn-secondary:hover {
+  background: #1a4d7a;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(15, 52, 96, 0.5);
+}
+
+.btn-success {
+  background: #e94560;
+  color: white;
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+}
+
+.btn-success:hover {
+  background: #ff5a7a;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(233, 69, 96, 0.5);
+}
+
+.pattern-display {
+  background: #0f1a2e;
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px solid #0f3460;
+  min-height: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-display::before {
+  display: none;
+}
+
+.pattern-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.pattern-item {
+  background: #FE7F2D;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 6px 15px rgba(254, 127, 45, 0.4);
+  animation: patternPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s;
+}
+
+.pattern-item:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(254, 127, 45, 0.5);
+}
+
+@keyframes patternPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(10px);
+  }
+  70% {
+    transform: scale(1.1) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.pattern-hint {
+  color: #233d4d;
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.voice-hint {
+  color: #02182B;
+  font-size: 1.2rem;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(135deg, #fff3e6 0%, #ffe8d1 100%);
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #FE7F2D;
+}
+
+.alert {
+  font-size: 1.2rem;
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Accessibility: High contrast and large click targets */
+button:focus,
+input:focus {
+  outline: 4px solid #FE7F2D;
+  outline-offset: 3px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 35px 25px;
+  }
+
+  .login-title {
+    font-size: 2.3rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+}
